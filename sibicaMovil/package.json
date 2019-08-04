@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "node server.js",
     "ionic:build:prod": "ionic-app-scripts build -- --prod",
-    "postinstall": "ionic-app-scripts ionic serve",
+    "postinstall": "ionic-app-scripts serve",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
