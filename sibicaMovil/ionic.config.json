@@ -1,5 +1,7 @@
 {
   "name": "sibicaMovil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
