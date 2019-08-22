@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login.component';
+import { InicioComponent } from './inicio.component';
+import { EsriMapComponent } from '../esri-map/esri-map.component';
 
 @NgModule({
   imports: [
@@ -14,10 +15,10 @@ import { LoginComponent } from './login.component';
     RouterModule.forChild([
       {
         path: '',
-        component: LoginComponent
+        component: InicioComponent
       }
     ])
   ],
-  declarations: [LoginComponent]
+  declarations: [InicioComponent,EsriMapComponent]
 })
-export class LoginModule {}
+export class InicioModule {}

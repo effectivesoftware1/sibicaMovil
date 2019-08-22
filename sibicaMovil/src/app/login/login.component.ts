@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'login',
-  templateUrl: 'login.page.html',
-
-  styleUrls: ['login.page.scss']
+  selector: 'app-login-component',
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.scss']
 })
-export class Login {
+export class LoginComponent implements OnInit {
   usuarioIngresado: string;
   idUsuario: number;
   constructor(private serviceAuth: AuthService, private navCtrl: NavController) { }
@@ -47,5 +46,10 @@ export class Login {
     );
   }
 
-
+  ngOnInit() {
+  }
+  // add back when alpha.4 is out
+  // navigate(item) {
+  //   this.router.navigate(['/list', JSON.stringify(item)]);
+  // }
 }
