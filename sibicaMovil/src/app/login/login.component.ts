@@ -10,12 +10,14 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginComponent implements OnInit {
   usuarioIngresado: string;
+  passwordIngresado: string;
   idUsuario: number;
   constructor(private serviceAuth: AuthService, private navCtrl: NavController) { }
 
 
   login(form: NgForm) {
     this.usuarioIngresado = form.value.email;
+    this.passwordIngresado = form.value.email;
 
     if (this.usuarioIngresado.indexOf("Jose")) {
       this.idUsuario = 3
@@ -30,9 +32,15 @@ export class LoginComponent implements OnInit {
     } else if (this.usuarioIngresado.indexOf("MIGUEL")) {
       this.idUsuario = 6
     }
-    this.serviceAuth.loginPru(this.idUsuario).subscribe(
-      data => {
+    this.serviceAuth.login(this.usuarioIngresado,this.passwordIngresado).subscribe(data => {
         console.log("valor de data", data);
+        if(data.status==1){
+           // if (res.user) {
+        //   await this.storage.set("ACCESS_TOKEN", res.user.access_token);
+        //   await this.storage.set("EXPIRES_IN", res.user.expires_in);
+        //   this.authSubject.next(true);
+        // }
+        }
         this.navCtrl.navigateRoot('/tabs');
       },
       error => {

@@ -38,17 +38,14 @@ export class AuthService {
     return this.httpClient.get<AuthResponsePrueba[]>(`${this.AUTH_SERVER_ADDRESS}/get_one`, { observe: 'response' });
   }
 
-  loginPru(Idusuario: number): Observable<AuthResponsePrueba> {
-    return this.httpClient.get(`${this.AUTH_SERVER_ADDRESS}/get_one?codigo=${Idusuario}`).pipe(
-      tap(async (res: AuthResponsePrueba) => {
+  login(Idusuario: string, password:string) {
+    return this.httpClient.get<any>(this.AUTH_SERVER_ADDRESS+'usuarioByMail?mail='+Idusuario+'&pass='+password);
+    //return this.httpClient.get(`${this.AUTH_SERVER_ADDRESS}/get_one?codigo=${Idusuario}`).pipe(
+     // tap(async (res: AuthResponsePrueba) => {
 
-        // if (res.user) {
-        //   await this.storage.set("ACCESS_TOKEN", res.user.access_token);
-        //   await this.storage.set("EXPIRES_IN", res.user.expires_in);
-        //   this.authSubject.next(true);
-        // }
-      })
-    );
+       
+   //  })
+    //);
   }
 
   async logout() {
