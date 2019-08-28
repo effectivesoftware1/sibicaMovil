@@ -3,6 +3,9 @@ import { AuthService } from '../auth/auth.service';
 import { AuthResponsePrueba } from '../auth/auth-response-prueba';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Platform } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+import { promise } from 'protractor';
+
 
 @Component({
   selector: 'app-home',
@@ -16,13 +19,23 @@ export class InicioComponent {
   // basemapType = 'hybrid';
   // mapZoomLevel = 15;
   usuarios: AuthResponsePrueba[];
-  constructor(private serviceAuth: AuthService, public platform: Platform) { }
+  constructor(private serviceAuth: AuthService, public platform: Platform, public alertCtrl: AlertController) { }
 
 
   ngOnInit() {
     this.loadAll();
   }
 
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   loadAll() {
     this.serviceAuth.getUsuarios().subscribe(
