@@ -24,6 +24,7 @@ export class InicioComponent {
 
   ngOnInit() {
     this.loadAll();
+    this.presentAlert();
   }
 
   async presentAlert() {
