@@ -9,12 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { AlertComponent } from './alert/alert.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, AlertComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

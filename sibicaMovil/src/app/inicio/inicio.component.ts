@@ -29,9 +29,8 @@ export class InicioComponent {
 
   async presentAlert() {
     const alert = await this.alertCtrl.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
+      header: 'Mensaje',
+      message: 'La información mostrada actualmente no corresponde a la totalidad de predios del Municipio ya que se está actualizando constantemente.',
       buttons: ['OK']
     });
 
