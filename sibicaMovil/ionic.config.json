@@ -1,7 +1,0 @@
-{
-  "name": "sibicaMovil",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
