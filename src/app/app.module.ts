@@ -9,13 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { PanoramaRiesgosPageModule } from './panorama-riesgos/panorama-riesgos.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
-    PanoramaRiesgosPageModule,
+  imports: [    
     AuthModule,
     BrowserModule,
     IonicModule.forRoot(),
